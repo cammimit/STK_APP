@@ -16,7 +16,7 @@
 		"restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
 	},
 	"watch": [
-		"server.js",
+		"BUILT/server.js",
 		"tests/",
 		"messages/"
 	],
