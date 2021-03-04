@@ -1,0 +1,23 @@
+{
+	"datastoretype" : "mysql",
+	"datastoreip" : "127.0.0.1",
+	"datastoreuser" : "root",
+	"datastorepass" : "P8ll8nd0#_#_",
+	"datastoreport" : "",
+	"datastoreoptions" : "",
+	"n_maxchildren" : "10",
+	"_maxchildren_comment" : "obviously many exceeds need to be reviewed",
+	"n_childtimeoutsecs" : "100",
+	"_childtimeoutsecs_comment" : "keep it clean people. but also functional",
+	"n_maxbuffers ": "100",
+	"_maxbuffers_comment" : "use with maxbuffersize for best performance",
+	"n_maxbuffersize" : "16000",
+	"_maxbuffersize_comment" : "use with maxbuffers for best performance",	
+	"clientQueryLog" : "_Data_Logs/clientQueryLog",
+	"_queryProfileLog_comment" : "for profiling queries",
+	"queryErrorProfileLog" : "_Data_Logs/queryErrorProfileLog",
+	"_queryErrorProfilelog_comment" : "for profiling query errors",
+	"errorProfileLog" : "_Data_Logs/errorProfileLog",
+	"_errorProfilelog_comment" : "for profiling buffer under runs, overruns, children timeouts etc",	
+	"lastConfigKey" : "just an integrity check key"
+}
