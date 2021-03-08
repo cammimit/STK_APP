@@ -1,0 +1,18 @@
+{
+  "DATASOURCETYPE": "MYSQL",
+  "LOCALDBPWD": "P8ll8nd0#_#_",
+  "LOCALDBHOST": "localhost",
+  "LOCALDBUSER": "root",
+  "LOCALDBPORT": "",
+  "LOCALDBDB": "",
+  "DEVDBPWD": "",
+  "DEVDBHOST": "",
+  "DEVDBUSER": "",
+  "DEVDBPORT": "",
+  "DEVDBDB": "",
+  "PRODDBPWD": "",
+  "PRODDBHOST": "",
+  "PRODDBUSER": "",
+  "PRODDBPORT": "",
+  "PRODDBDB": ""
+}

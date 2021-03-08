@@ -13,8 +13,7 @@
 		"js": "node --harmony"
 	},
 	"events": {
-		"restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'",
-		"restart":  "BUILT/server.js"
+		"restart": "BUILT/server.js"
 	},
 	"watch": [
 		"BUILT/server.js",
@@ -24,6 +23,5 @@
 	"env": {
 		"NODE_ENV": "dev"
 	},
-	"ext": "js,json,css",
-	"scripts":  {"build": ""}
+	"ext": "js,json,css"
 }
