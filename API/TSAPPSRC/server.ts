@@ -1,11 +1,16 @@
-//the omission of an output directory for the typescript compile is for convenience
-//in using nodemon locally without complex directory configs
+//the environment options are local, dev or  prod
 
 //make sure you set up the environment correctly otherwise all the wheels will fall off.
 if (typeof (process.env.NODE_ENV) == 'undefined') {
-    console.log('The environment does not seem to be set up correctly. Exiting. Fatal Error.');
+    console.log('The environment does not seem to be set up correctly. Exiting. Fatal Error.\nSet to LOCAL, DEV or PROD.');
 }
+import * as datalayer from 'Datalayer'
 const express = import('express');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+//const router:  = express.Router();
+const cors = require('cors');
+
 console.log('ENV: ' + process.env.NODE_ENV);
 console.log('Exiting');
 
@@ -24,11 +29,6 @@ console.log('Exiting');
 ///* d. log off a user token */
 ///* remember to install crypto-random-string */
 //
-//const express = require('express');
-//const session = require('express-session');
-//const bodyParser = require('body-parser');
-//const router = express.Router();
-//const cors = require('cors');
 //const app = express();
 //const ourMessages = require('./MESSAGES/Messages.js');
 //const ourPickingOrderList = require('./MESSAGES/Picking_Order_List.js');

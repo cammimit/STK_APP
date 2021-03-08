@@ -4,6 +4,7 @@
   "description": "Basic API to Serve Stock Management Functions",
   "main": "server.js",
   "scripts": {
+    "build": "echo \"No build specified.\" && exit 1",
     "test": "jasmine"
   },
   "keywords": [],
