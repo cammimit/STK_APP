@@ -3,9 +3,10 @@
     "",
     "\\API",
     "\\API\\TSAPPSRC",
-    "\\API\\TSAPPSRC\\server",
-    "\\APP\\src"
+    "\\REF",
+    "\\REF\\server",
+    "\\REF\\server\\cats"
   ],
-  "SelectedNode": "\\API\\TSAPPSRC\\server\\ExpressServer.ts",
+  "SelectedNode": "\\API\\package.json",
   "PreviewInSolutionExplorer": false
 }

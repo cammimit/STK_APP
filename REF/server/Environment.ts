@@ -6,7 +6,7 @@ export class Environment {
     }
 
     public static isStaging(): boolean {
-        return Environment.getStage() === 'staging'
+        return Environment.getStage() === 'dev'
     }
 
     public static isProd(): boolean {
@@ -29,11 +29,11 @@ export class Environment {
         return process.env.SERVICE_NAME || 'cats-provider'
     }
 
-    public static getDatadogOptions(): DatadogStatsdConfig {
-        return {
-            targetHost: process.env.DATADOG_HOST || 'https://datadog.mycompany.com',
-            enableTelemetry: process.env.ENABLE_DATADOG_TELEMETRY === 'true' || false,
-            tags: [`team:${Environment.getVerticalName()}`, `product:${Environment.getServiceName()}`]
-        }
-    }
+    //public static getDatadogOptions(): DatadogStatsdConfig {
+    //    return {
+    //        targetHost: process.env.DATADOG_HOST || 'https://datadog.mycompany.com',
+    //        enableTelemetry: process.env.ENABLE_DATADOG_TELEMETRY === 'true' || false,
+    //        tags: [`team:${Environment.getVerticalName()}`, `product:${Environment.getServiceName()}`]
+    //    }
+    //}
 }

@@ -12,8 +12,19 @@ const bodyParser = require('body-parser');
 //const router:  = express.Router();
 const cors = require('cors');
 const config = require('./ReadConfig.js');
-var confObject: any;
-config.rcReadConfigFile(confObject);
+var confObject: any = new Object();
+async function getConfig(confObject) {
+    let v = await config.rcReadConfigFile(confObject);
+
+    if (!v.ok) { throw new Error(`HTTP error! status: ${v.status}`); }
+    else {
+        console.log('Testing Config: ' + confObject.LOCALDBPWD);
+    }
+}
+
+getConfig(confObject);
+
+
 
 console.log('ENV: ' + process.env.NODE_ENV);
 console.log('Exiting');

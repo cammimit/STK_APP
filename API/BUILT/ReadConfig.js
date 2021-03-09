@@ -77,14 +77,15 @@ function procConfigJSON(cfo, ourConfigObj) {
     var key = '';
     for (key in ourConfigObj) {
         value = ourConfigObj[key];
-        //		console.log(' KEY: ' + key + ' VALUE: ' + value);
+        console.log(' KEY: ' + key + ' VALUE: ' + value);
         if (key.match(/\_comment$/)) { } //just skip the comment keys
         else {
-            cfo.key = value;
+            Object.defineProperty(cfo, key, { value: value });
         }
     }
     //console.log('Returning processed config object');
-    cfo.initdone = 1;
+    console.log('Testing Config: ' + cfo.LOCALDBPWD);
+    cfo["initdone"] = 1;
 }
 /* exports*/
 exports.rcReadConfigFile = rcReadConfigFile;
