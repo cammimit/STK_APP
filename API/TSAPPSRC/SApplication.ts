@@ -13,12 +13,12 @@ import { rcReadConfigFile } from './ReadConfig.js'
  */
 export class SApplication {
     public static async createApplication() {
-       // const catService = new CatService(new CatRepository())
-       // const requestServices = { catService }
-      //  const expressServer = new ExpressServer(new CatEndpoints(), requestServices)
+        const catService = new CatService(new CatRepository())
+        const requestServices = { catService }
+        const expressServer = new ExpressServer(new CatEndpoints(), requestServices)
 
         await expressServer.setup(Environment.getPort())
-        Application.handleExit(expressServer)
+        SApplication.handleExit(expressServer)
 
         return expressServer
     }
@@ -27,19 +27,19 @@ export class SApplication {
     private static handleExit(express: ExpressServer) {
         process.on('uncaughtException', (err: Error) => {
             console.error('Uncaught exception', err)
-            Application.shutdownProperly(1, express)
+            SApplication.shutdownProperly(1, express)
         })
         process.on('unhandledRejection', (reason: {} | null | undefined) => {
             console.error('Unhandled Rejection at promise', reason)
-            Application.shutdownProperly(2, express)
+            SApplication.shutdownProperly(2, express)
         })
         process.on('SIGINT', () => {
             console.info('Caught SIGINT')
-            Application.shutdownProperly(128 + 2, express)
+            SApplication.shutdownProperly(128 + 2, express)
         })
         process.on('SIGTERM', () => {
             console.info('Caught SIGTERM')
-            Application.shutdownProperly(128 + 2, express)
+            SApplication.shutdownProperly(128 + 2, express)
         })
         process.on('exit', () => {
             console.info('Exiting')
