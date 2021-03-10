@@ -1,8 +1,8 @@
 import { ExpressServer } from './ExpressServer'
-//import { CatEndpoints } from './cats/CatEndpoints'
-//import { CatService } from './cats/CatService'
-//import { CatRepository } from './cats/CatRepository'
-//import { Environment } from './Environment'
+import { CatEndpoints } from './cats/CatEndpoints'
+import { CatService } from './cats/CatService'
+import { CatRepository } from './cats/CatRepository'
+import { Environment } from './Environment'
 import { rcReadConfigFile } from './ReadConfig.js'
 
 /**
@@ -11,7 +11,7 @@ import { rcReadConfigFile } from './ReadConfig.js'
  * When not using Dependency Injection, can be used 
  * as place for wiring together services which are dependencies of ExpressServer.
  */
-export class Application {
+export class SApplication {
     public static async createApplication() {
        // const catService = new CatService(new CatRepository())
        // const requestServices = { catService }
