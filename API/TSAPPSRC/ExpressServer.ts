@@ -8,11 +8,11 @@ import * as hpp from 'hpp'
 import * as cors from 'cors'
 import * as bodyParser from 'body-parser'
 import * as cookieParser from 'cookie-parser'
-//import * as RateLimit from 'express-rate-limit'
+import * as RateLimit from 'express-rate-limit'
 
 //import { noCache } from './middlewares/NoCacheMiddleware'
 //import DatadogStatsdMiddleware from './middlewares/DatadogStatsdMiddleware'
-//import { CatEndpoints } from './cats/CatEndpoints'
+import { CatEndpoints } from './cats/CatEndpoints'
 //import { RequestServices } from './types/CustomRequest'
 //import { addServicesToRequest } from './middlewares/ServiceDependenciesMiddleware'
 //import { Environment } from './Environment'
@@ -37,7 +37,7 @@ export class ExpressServer {
         this.setupSecurityMiddlewares(server)
         this.setupFeatureToggles(server)
         this.applyWebpackDevMiddleware(server)
-        this.setupTelemetry(server)
+        //this.setupTelemetry(server)
         this.setupServiceDependencies(server)
         this.configureEjsTemplates(server)
         this.configureFrontendPages(server)
@@ -96,9 +96,9 @@ export class ExpressServer {
         server.set('view engine', 'ejs')
     }
 
-    private setupTelemetry(server: Express) {
-        DatadogStatsdMiddleware.applyTo(server, Environment.getDatadogOptions())
-    }
+    //private setupTelemetry(server: Express) {
+        //DatadogStatsdMiddleware.applyTo(server, Environment.getDatadogOptions())
+   // }
 
     private setupServiceDependencies(server: Express) {
         const servicesMiddleware = addServicesToRequest(this.requestServices)

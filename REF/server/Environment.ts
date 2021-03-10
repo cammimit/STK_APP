@@ -1,4 +1,4 @@
-import { DatadogStatsdConfig } from './middlewares/DatadogStatsdMiddleware'
+//import { DatadogStatsdConfig } from './middlewares/DatadogStatsdMiddleware'
 
 export class Environment {
     public static isLocal(): boolean {
