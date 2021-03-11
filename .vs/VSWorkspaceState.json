@@ -3,10 +3,9 @@
     "",
     "\\API",
     "\\API\\TSAPPSRC",
-    "\\REF",
-    "\\REF\\server",
-    "\\REF\\server\\cats"
+    "\\API\\TSAPPSRC\\shared",
+    "\\REF"
   ],
-  "SelectedNode": "\\REF\\server\\cats\\Cat.d.ts",
+  "SelectedNode": "\\API\\tests",
   "PreviewInSolutionExplorer": false
 }

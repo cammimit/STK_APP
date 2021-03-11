@@ -10,14 +10,14 @@ import * as bodyParser from 'body-parser'
 import * as cookieParser from 'cookie-parser'
 import * as RateLimit from 'express-rate-limit'
 
-//import { noCache } from './middlewares/NoCacheMiddleware'
+import { noCache } from './middlewares/NoCacheMiddleware'
 //import DatadogStatsdMiddleware from './middlewares/DatadogStatsdMiddleware'
 import { CatEndpoints } from './cats/CatEndpoints'
-import { RequestServices } from './types/CustomRequest'
-//import { addServicesToRequest } from './middlewares/ServiceDependenciesMiddleware'
-//import { Environment } from './Environment'
-//import { FrontendContext } from '../shared/FrontendContext'
-//import { applyFeatureToggles } from './middlewares/feature-toggles/setupFeatureToggles'
+import { RequestServices } from './cats/CustomRequest'
+import { addServicesToRequest } from './middlewares/ServiceDependenciesMiddleware'
+import { Environment } from './Environment'
+import { FrontendContext } from './shared/FrontendContext'
+import { applyFeatureToggles } from './middlewares/feature-toggles/setupFeatureToggles'
 
 /**
  * Abstraction around the raw Express.js server and Nodes' HTTP server.
