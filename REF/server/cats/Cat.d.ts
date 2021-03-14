@@ -33,13 +33,13 @@ export interface PLItem {
 }
 
 export interface PLHead {
-    headerid: number
-    sourcedicid: number
-    sourcedoctype: string
+    headerId: number
+    sourceDocId: number
+    sourceDocType: string
 }
 
 export interface PLBody {
-
+    lineId: number
 
 }
 
