@@ -1,21 +1,21 @@
 {
-  "name": "STK_APP_API",
-  "version": "2.0.0",
+  "name": "stk-app-api",
   "description": "Basic API to Serve Stock Management Functions",
+  "version": "2.0.0",
   "main": "server.js",
   "scripts": {
     "build": "echo \"No build specified.\" && exit 1",
     "test": "jasmine",
-    "buildprod":""
-    },
-    "repository": {
+    "buildprod": ""
+  },
+  "repository": {
     "type": "git",
     "url": "https://github.com/cammimit/stk_app"
-    }
-    "keywords": [],
-     "author": "cammimit",
-    "license": "GPL-3.0",
-    "dependencies": {
+  },
+  "keywords": [],
+  "author": "cammimit",
+  "license": "GPL-3.0",
+  "dependencies": {
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.4",
@@ -30,5 +30,12 @@
     "http-status-codes": "^2.1.4",
     "mysql": "^2.17.1",
     "simple-node-logger": "^18.12.24"
+  },
+  "devDependencies": {
+    "@types/mocha": "^8.2.1",
+    "chai": "^4.3.4",
+    "expressmocks": "^0.3.1",
+    "mocha": "^8.3.2",
+    "sinon": "^9.2.4"
   }
 }

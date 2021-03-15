@@ -2,3 +2,4 @@ certificate.pem
 key.pem
 server.js
 server.js.map
+FCSTKCONF.json
