@@ -16,7 +16,7 @@
 		"restart": "BUILT/server.js"
 	},
 	"watch": [
-		"BUILT/server.js",
+		"BUILT/index.js",
 		"tests/",
 		"messages/"
 	],
