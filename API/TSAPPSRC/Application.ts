@@ -1,21 +1,23 @@
 import { ExpressServer } from './ExpressServer'
-import { CatEndpoints } from './cats/CatEndpoints'
-import { CatService } from './cats/CatService'
-import { CatRepository } from './cats/CatRepository'
-import { Environment } from './Environment'
+//import { CatEndpoints } from './cats/CatEndpoints'
+//import { CatService } from './cats/CatService'
+//import { CatRepository } from './cats/CatRepository'
+//import { Environment } from './Environment'
 
 /**
  * Wrapper around the Node process, ExpressServer abstraction and complex dependencies such as services that ExpressServer needs.
  * When not using Dependency Injection, can be used as place for wiring together services which are dependencies of ExpressServer.
  */
 export class Application {
-    public static async createApplication() {
-        const catService = new CatService(new CatRepository())
-        const requestServices = { catService }
-        const expressServer = new ExpressServer(new CatEndpoints(), requestServices)
+    public exmode: string
+    public static async createApplication(exmode: string) {
+        //const catService = new CatService(new CatRepository())
+        //const requestServices = { catService }
+        //const expressServer = new ExpressServer(new CatEndpoints(), requestServices)
+        const expressServer = new ExpressServer(exmode)
 
-        await expressServer.setup(Environment.getPort())
-        Application.handleExit(expressServer)
+        //await expressServer.setup(Environment.getPort())
+        //Application.handleExit(expressServer)
 
         return expressServer
     }

@@ -9,14 +9,14 @@ import { Application } from './Application'
  * This is about to come later!
  */
 
-var exmode = '';
+var exmode: string = '';
 if (typeof (process.env.NODE_ENV) == 'undefined') {
     exmode = 'dev';
 }
 else {
     exmode = process.env.NODE_ENV;
 }
- Application.createApplication(exmode).then(() => {
+Application.createApplication(exmode).then(() => {
     console.info('The application was started! Kill it using Ctrl + C')
     })
 
