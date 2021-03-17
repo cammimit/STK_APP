@@ -125,18 +125,49 @@ export class ExpressServer {
         //server.get('/', noCache, renderPage('index'))
     }
 
+    //private configureStaticAssets(server: Express) {
+    //    if (Environment.isProd()) {
+    //        server.use([/(.*)\.js\.map$/, '/'], express.static('www/'))
+    //    } else {
+    //        server.use('/', express.static('www/'))
+    //    }
+    //
+    //    server.use('/', express.static('resources/img/'))
+    //}
+
     private configureStaticAssets(server: Express) {
-        if (Environment.isProd()) {
+        if (this.exmode=='prod') {
             server.use([/(.*)\.js\.map$/, '/'], express.static('www/'))
         } else {
             server.use('/', express.static('www/'))
         }
-
+    
         server.use('/', express.static('resources/img/'))
     }
 
+    //private applyWebpackDevMiddleware(server: Express) {
+    //    if (Environment.isLocal()) {
+    //        const config = require('../../webpack.config.js')
+    //        const compiler = require('webpack')(config)
+    //
+    //        const webpackDevMiddleware = require('webpack-dev-middleware')
+    //        server.use(
+    //            webpackDevMiddleware(compiler, {
+    //                hot: true,
+    //                publicPath: config.output.publicPath,
+    //                compress: true,
+    //                host: 'localhost',
+    //                port: Environment.getPort()
+    //            })
+    //        )
+    //
+    //        const webpackHotMiddleware = require('webpack-hot-middleware')
+    //        server.use(webpackHotMiddleware(compiler))
+    //    }
+    //}
+
     private applyWebpackDevMiddleware(server: Express) {
-        if (Environment.isLocal()) {
+        if (this.exmode=='dev') {
             const config = require('../../webpack.config.js')
             const compiler = require('webpack')(config)
 
@@ -147,7 +178,7 @@ export class ExpressServer {
                     publicPath: config.output.publicPath,
                     compress: true,
                     host: 'localhost',
-                    port: Environment.getPort()
+                    port: 3816
                 })
             )
 
@@ -156,8 +187,17 @@ export class ExpressServer {
         }
     }
 
+    //private async prepareAssets() {
+    //    if (Environment.isLocal()) {
+    //        this.cssFiles = []
+    //    } else {
+    //        const isomorphicAssets: any = JSON.parse(await fse.readFile('www/static/media/isomorphic-assets.json', 'utf-8'))
+    //        this.cssFiles = isomorphicAssets.chunks.app.filter((path: string) => path.endsWith('.css'))
+    //    }
+    //}
+
     private async prepareAssets() {
-        if (Environment.isLocal()) {
+        if (this.exmode=='dev') {
             this.cssFiles = []
         } else {
             const isomorphicAssets: any = JSON.parse(await fse.readFile('www/static/media/isomorphic-assets.json', 'utf-8'))
