@@ -2,10 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\API",
-    "\\API\\TSAPPSRC",
-    "\\API\\TSAPPSRC\\shared",
-    "\\REF"
+    "\\API\\spec",
+    "\\API\\test",
+    "\\API\\TSAPPSRC"
   ],
-  "SelectedNode": "\\API\\tests",
+  "SelectedNode": "\\API\\TSAPPSRC\\Config.ts",
   "PreviewInSolutionExplorer": false
 }

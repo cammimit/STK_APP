@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "build": "echo \"No build specified.\" && exit 1",
-    "test": "jasmine",
+    "test": "moch -u bdd -R spec -t -500 recursive",
+    "watch": "mocha -u bdd -R spec -t 500 --recursive --watch",
     "buildprod": ""
   },
   "repository": {
