@@ -167,6 +167,7 @@ export class ExpressServer {
     //}
 
     private applyWebpackDevMiddleware(server: Express) {
+    //using angular in a live environment means that thsi will be handled differently
         if (this.exmode=='dev') {
             const config = require('../../webpack.config.js')
             const compiler = require('webpack')(config)

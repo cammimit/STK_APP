@@ -10,6 +10,7 @@ import { ExpressServer } from './ExpressServer'
  */
 export class Application {
     public exmode: string
+
     public static async createApplication(exmode: string) {
         //const catService = new CatService(new CatRepository())
         //const requestServices = { catService }
